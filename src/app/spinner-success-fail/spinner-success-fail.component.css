@@ -1,0 +1,111 @@
+.icon {
+  display: none;
+}
+
+#tick {
+  stroke: #12d600;
+  stroke-width: 6;
+  transition: all 0.6s;
+}
+
+#circle {
+  stroke: #63bc01;
+  stroke-width: 6;
+  stroke-dasharray: 500;
+  transform-origin: 50px 50px 0;
+  transition: all 0.6s;
+}
+
+#cross {
+  stroke: #d60000;
+  stroke-width: 6;
+}
+
+/* Progress */
+.progress #tick {
+  opacity: 0;
+}
+
+.progress #circle {
+  stroke: #4c4c4c;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 1000;
+  animation: spin 2s linear infinite;
+}
+
+.progress #cross {
+  opacity: 0;
+}
+
+/* Ready */
+.ready #tick {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 8s ease-out forwards;
+}
+
+.ready #circle {
+  stroke-dashoffset: 66;
+  stroke: #12d600;
+}
+
+.ready #cross {
+  opacity: 0;
+}
+
+/* Fail */
+.fail #tick {
+  opacity: 0;
+}
+.fail #circle {
+  stroke-dashoffset: 66;
+  stroke: #d60000;
+}
+.fail #crossbar-one,
+.fail #crossbar-two {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.fail #crossbar-one {
+  animation: draw 8s ease-out forwards;
+}
+
+.fail #crossbar-two {
+  animation: draw 8s ease-out 0.3s forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    stroke-dashoffset: 66;
+  }
+  50% {
+    transform: rotate(540deg);
+    stroke-dashoffset: 314;
+  }
+  100% {
+    transform: rotate(1080deg);
+    stroke-dashoffset: 66;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#check {
+  width: 300px;
+  height: 300px;
+}
+
+body {
+  margin: 50px;
+  align-items: center;
+  justify-content: space-around;
+  background: #e7e7e7;
+  display: flex;
+  flex-wrap: wrap;
+}

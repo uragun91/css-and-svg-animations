@@ -1,0 +1,18 @@
+<svg
+  [class.progress]="isProgress"
+  [class.ready]="isReady"
+  [class.fail]="isFail"
+  id="check"
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 100 100"
+  xml:space="preserve"
+>
+  <circle id="circle" cx="50" cy="50" r="46" fill="transparent" />
+  <polyline id="tick" points="25,55 45,70 75,33" fill="transparent" />
+  <g id="cross" fill="transparent">
+    <polyline id="crossbar-one" points="30,30 70,70" />
+    <polyline id="crossbar-two" points="70,30 30,70 " />
+  </g>
+</svg>
